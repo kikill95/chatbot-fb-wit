@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "light <kirill.gus@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
