@@ -18,3 +18,5 @@ function sendMessageToFB(recipientId, message) {
     }
   });
 }
+
+module.exports = sendMessageToFB;
