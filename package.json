@@ -6,11 +6,16 @@
   "author": "light <kirill.gus@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "serve": "nodemon --debug index.js"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "node-wit": "^4.2.0",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
