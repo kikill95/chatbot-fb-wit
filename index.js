@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const wit = require('./wit');
+const sendMessageToFB = require('./sendMessageToFB');
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -38,7 +39,14 @@ app.post('/webhook', (req, res) => {
   for (let i = 0; i < events.length; i++) {
     let event = events[i];
     if (event.message && event.message.text) {
-      wit.runActions(event.sender.id, event.message.text || 'What did you say, sunny?', {});
+      wit.message(event.message.text, {})
+        .then(data => {
+          if (Object.keys(data.entities).length > 0) {
+            wit.runActions(event.sender.id, event.message.text, {});
+          } else {
+            sendMessageToFB(event.sender.id, 'What did you say, sunny?');
+          }
+        });
     }
   }
   res.sendStatus(200);
