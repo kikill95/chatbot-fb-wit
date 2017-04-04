@@ -1,5 +1,7 @@
 'use strict';
 
+const request = require('request');
+
 // generic function sending messages
 function sendMessageToFB(recipientId, message) {
   request({

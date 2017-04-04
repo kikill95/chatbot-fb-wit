@@ -1,7 +1,6 @@
 'use strict';
 
 const {Wit} = require('node-wit');
-const request = require('request');
 
 const sendMessageToFB = require('./sendMessageToFB');
 
