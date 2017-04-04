@@ -44,7 +44,7 @@ app.post('/webhook', (req, res) => {
           if (Object.keys(data.entities).length > 0) {
             wit.runActions(event.sender.id, event.message.text, {});
           } else {
-            sendMessageToFB(event.sender.id, 'What did you say, sunny?');
+            sendMessageToFB(event.sender.id, {text: 'What did you say, sunny?'});
           }
         });
     }
