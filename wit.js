@@ -21,6 +21,8 @@ const client = new Wit({
   accessToken: process.env.WIT_TOKEN,
   actions: {
     send({sessionId}, {text}) {
+      console.log('actions - send: text', text);
+      console.log('actions - send: sessionId', sessionId);
       sendMessageToFB(sessionId, {text});
       return new Promise(function(resolve, reject) {
         return resolve();
